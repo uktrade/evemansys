@@ -189,7 +189,7 @@ STATIC_URL = '/static/'
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = [
-    str(os.path.join(ROOT_DIR, 'static')),
+    os.path.join(str(ROOT_DIR), 'static'),
     str(APPS_DIR.path('static')),
 ]
 
