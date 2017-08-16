@@ -15,7 +15,7 @@ urlpatterns = [
     # User management
     url(r'^users/', include('evemansys.users.urls', namespace='users')),
     url(r'^accounts/', include('allauth.urls')),
-
+    url(r'^static/(?P.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
     # Your stuff: custom urls includes go here
 
 

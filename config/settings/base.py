@@ -7,6 +7,8 @@ https://docs.djangoproject.com/en/dev/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/dev/ref/settings/
 """
+import os
+
 import environ
 
 ROOT_DIR = environ.Path(__file__) - 3  # (evemansys/config/settings/base.py - 3 = evemansys/)
@@ -187,6 +189,7 @@ STATIC_URL = '/static/'
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = [
+    os.path.join(ROOT_DIR, 'static'),
     str(APPS_DIR.path('static')),
 ]
 
