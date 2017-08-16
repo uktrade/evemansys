@@ -65,7 +65,7 @@ INSTALLED_APPS += ['gunicorn', ]
 
 # Static Assets
 # ------------------------
-INSTALLED_APPS = ['collectfast', ] + INSTALLED_APPS
+INSTALLED_APPS = ['collectfast', 'whitenoise', ] + INSTALLED_APPS
 
 # EMAIL
 # ------------------------------------------------------------------------------
@@ -163,8 +163,3 @@ SENTRY_CELERY_LOGLEVEL = env.int('DJANGO_SENTRY_LOG_LEVEL', logging.INFO)
 #     'CELERY_LOGLEVEL': env.int('DJANGO_SENTRY_LOG_LEVEL', logging.INFO),
 #     'DSN': SENTRY_DSN
 # }
-
-# Custom Admin URL, use {% url 'admin:index' %}
-DJANGO_ADMIN_URL ='\^secretadmin/'
-# Your production stuff: Below this line define 3rd party library settings
-# ------------------------------------------------------------------------------

@@ -46,6 +46,7 @@ DJANGO_APPS = [
 ]
 THIRD_PARTY_APPS = [
     'crispy_forms',  # Form layouts
+    'whitenoise',
     'allauth',  # registration
     'allauth.account',  # registration
     'allauth.socialaccount',  # registration
@@ -65,6 +66,7 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 # ------------------------------------------------------------------------------
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -194,6 +196,8 @@ STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 ]
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # MEDIA CONFIGURATION
 # ------------------------------------------------------------------------------
