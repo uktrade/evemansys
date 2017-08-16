@@ -22,6 +22,14 @@ TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
 # Note: This key only used for development and testing.
 SECRET_KEY = env('DJANGO_SECRET_KEY', default='1zjGu<KZUNQ$%_Br|pU;3w&uI=|c$kD[zSXH,16KMUONZ8RQ`O')
 
+# DATABASE CONFIGURATION
+# ------------------------------------------------------------------------------
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
+DATABASES = {
+    'default': env.db('DATABASE_URL', default='postgres://postgres:postgres@localhost/evemansys'),
+}
+DATABASES['default']['ATOMIC_REQUESTS'] = True
+
 # Mail settings
 # ------------------------------------------------------------------------------
 

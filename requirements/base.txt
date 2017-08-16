@@ -6,7 +6,7 @@ wheel==0.29.0
 
 
 # Bleeding edge Django
-django==1.10.7 # pyup: >=1.10,<1.11
+django>=1.11 # pyup: >=1.10,<1.11
 
 # Configuration
 django-environ==0.4.3
@@ -52,3 +52,6 @@ celery==3.1.25
 
 # Your custom requirements go here
 django-debug-toolbar==1.8
+
+-e git://github.com/PeterNociar/django-dit-sso-client.git#egg=dit-sso-client
+
