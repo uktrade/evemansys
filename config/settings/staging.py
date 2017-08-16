@@ -65,7 +65,7 @@ INSTALLED_APPS += ['gunicorn', ]
 
 # Static Assets
 # ------------------------
-INSTALLED_APPS = ['collectfast', 'whitenoise', ] + INSTALLED_APPS
+INSTALLED_APPS = ['whitenoise', ] + INSTALLED_APPS
 
 # EMAIL
 # ------------------------------------------------------------------------------
