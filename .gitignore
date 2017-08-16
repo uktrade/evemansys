@@ -70,9 +70,5 @@ node_modules/
 # User-uploaded media
 evemansys/media/
 
-
-
-staticfiles/
-
 .cache/
 
