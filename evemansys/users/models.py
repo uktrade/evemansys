@@ -22,7 +22,6 @@ class Employee(models.Model):
 
 class ExternalUser(models.Model):
     base_user = models.OneToOneField(User, on_delete=models.CASCADE)
-    email = models.CharField(max_length=255, db_index=True)
     telephone = models.CharField(max_length=20)
 
     def __str__(self):

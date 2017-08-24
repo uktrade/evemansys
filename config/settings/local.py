@@ -56,6 +56,8 @@ INSTALLED_APPS += ['debug_toolbar', ]
 
 INTERNAL_IPS = ['127.0.0.1', '10.0.2.2', ]
 
+SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
+SESSION_COOKIE_NAME = 'SESSION_KEY'
 
 import socket
 import os
@@ -86,3 +88,7 @@ CELERY_ALWAYS_EAGER = True
 
 # Your local stuff: Below this line define 3rd party library settings
 # ------------------------------------------------------------------------------
+
+# DIT_SSO_HOSTNAME
+# DIT_PROFILE_HOSTNAME
+# DIT_SSO_INTERNAL_HOSTNAME = 'localhost:9443'
