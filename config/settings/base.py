@@ -38,6 +38,7 @@ DJANGO_APPS = [
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.gis',
 
     # Useful template tags:
     # 'django.contrib.humanize',
@@ -52,12 +53,16 @@ THIRD_PARTY_APPS = [
     'allauth.socialaccount',  # registration
     'ditsso',
     'ditsso_internal',
+    'formtools',
+    'datetimewidget',
+    'ckeditor',
 ]
 
 # Apps specific for this project go here.
 LOCAL_APPS = [
     # custom users app
     'evemansys.users.apps.UsersConfig',
+    'evemansys.events.apps.EventsConfig',
     # Your stuff: custom apps go here
 ]
 
@@ -113,7 +118,8 @@ MANAGERS = ADMINS
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
-    'default': env.db('DATABASE_URL', default='postgres:///evemansys'),
+    'default': env.db('DATABASE_URL', default='postgis:///evemansys'),
+
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 

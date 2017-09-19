@@ -1,0 +1,44 @@
+{% extends "backend/base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="tabs-nav">
+    <ul class="tabs-list" role="tablist">
+        <li class="tab"><a class="live-events" href="#live-events" aria-controls="live-events">Live</a></li>
+        <li class="tab"><a class="draft-events" href="#draft-events" aria-controls="draft-events" aria-selected="true">Draft</a></li>
+        <li class="tab"><a class="template-events" href="#template-events" aria-controls="template-events">Templates</a></li>
+        <li class="tab"><a class="past-events" href="#past-events" aria-controls="past-events">Past</a></li>
+    </ul>
+</div>
+<div class="tabs-content">
+    <div class="tabs-panel" id="live-events" >
+        <div class="tabs-panel-inner">
+            {% for event in live_events %}
+                {% include "backend/live_event_list_element.html" with event=event %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="tabs-panel" id="draft-events" >
+        <div class="tabs-panel-inner">
+            {% for event in drafts %}
+                {% include "backend/live_event_list_element.html" with event=event %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="tabs-panel" id="template-events" >
+        <div class="tabs-panel-inner">
+            {% for event in templates %}
+                {% include "backend/live_event_list_element.html" with event=event %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="tabs-panel" id="past-events" >
+        <div class="tabs-panel-inner">
+            {% for event in past_events %}
+                {% include "backend/live_event_list_element.html" with event=event %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}

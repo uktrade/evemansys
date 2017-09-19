@@ -1,14 +1,18 @@
-import urllib
-
-
-from ditsso.views import DitSSOAdapter
 from django.core.urlresolvers import reverse
-from django.shortcuts import redirect
 from django.views.generic import DetailView, ListView, RedirectView, UpdateView
-
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django import template
+from django.contrib.auth.models import Group
 
-from .models import User
+from .models import User, EMPLOYEE_GROUP_NAME
+
+register = template.Library()
+
+
+@register.filter(name='is_employee')
+def is_employee(user):
+    group = Group.objects.get(name=EMPLOYEE_GROUP_NAME)
+    return group in user.groups.all()
 
 
 class UserDetailView(LoginRequiredMixin, DetailView):
